@@ -20,7 +20,7 @@ const gallery = document.querySelector("ul.gallery");
 const newImages = images.map((image) => {
   const element = document.createElement("li");
   gallery.append(element);
-  element.insertAdjacentHTML("beforeend", `<img scr = "${image.url}" alt = "${image.alt}">`);
+  element.insertAdjacentHTML("beforeend", `<img src="${image.url}" alt="${image.alt}" />`);
 })
-
 console.log(gallery);
+
