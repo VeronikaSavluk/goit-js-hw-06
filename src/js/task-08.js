@@ -13,7 +13,6 @@
 //  очисти значення полів форми методом reset.
 
 const loginFormEl = document.querySelector("form.login-form");
-console.log(loginFormEl);
 loginFormEl.addEventListener("submit", handleSubmit);
 function handleSubmit(event) {
     event.preventDefault();
