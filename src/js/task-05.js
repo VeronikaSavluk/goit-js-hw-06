@@ -5,5 +5,5 @@ const inputEl = document.querySelector("input#name-input");
 const textEl = document.querySelector("span#name-output");
 console.log(textEl);
 inputEl.addEventListener("input", (event) => {
-    textEl.textContent = event.currentTarget.value;
+    textEl.textContent = event.currentTarget.value || `Anonymous`;
 })
