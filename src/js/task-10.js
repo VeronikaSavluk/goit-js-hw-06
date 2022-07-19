@@ -25,8 +25,9 @@ const createBoxes = (amount) => {
   const boxes = [];
   for (let i = 0; i < inputEl.value; i += 1) {
     const box = document.createElement("div");
-    box.style.width = `${30 + i * 10}px`;
-    box.style.height = `${30 + i * 10}px`;
+    const startSize = 30;
+    box.style.width = `${startSize + i * 10}px`;
+    box.style.height = `${startSize + i * 10}px`;
     box.style.backgroundColor = getRandomHexColor();
     boxes.push(box);
   };
@@ -36,6 +37,8 @@ const createBoxes = (amount) => {
 createBtn.addEventListener("click", createBoxes);
 
 const destroyBoxes = () => {
-  divBoxes.replaceChildren();
+  // divBoxes.replaceChildren();
+  divBoxes.innerHTML = "";
+  inputEl.value = "";
 };
 destroyBtn.addEventListener("click", destroyBoxes);
