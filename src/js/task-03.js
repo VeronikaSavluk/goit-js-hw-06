@@ -16,11 +16,18 @@ const images = [
 // Для створення розмітки використовуй шаблонні рядки і метод insertAdjacentHTML().
 // Усі елементи галереї повинні додаватися в DOM за одну операцію додавання.
 // Додай мінімальне оформлення галереї флексбоксами або грідами через CSS класи.
+
+// const gallery = document.querySelector("ul.gallery");
+// const newImages = images.map((image) => {
+//   const element = document.createElement("li");
+//   gallery.append(element);
+//   element.insertAdjacentHTML("beforeend", `<img src="${image.url}" alt="${image.alt}" />`);
+// });
+
 const gallery = document.querySelector("ul.gallery");
-const newImages = images.map((image) => {
-  const element = document.createElement("li");
-  gallery.append(element);
-  element.insertAdjacentHTML("beforeend", `<img src="${image.url}" alt="${image.alt}" />`);
-})
+const newImages = images.map(image =>
+`<li><img src="${image.url}" alt="${image.alt}" /></li>`
+).join(" ");
+gallery.insertAdjacentHTML("beforeend", `${newImages}`);
 console.log(gallery);
 
