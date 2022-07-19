@@ -12,10 +12,17 @@ const ingredients = [
 // Додасть елементу клас item.
 // Після чого, вставить усі <li> за одну операцію у список ul#ingredients.
 const list = document.querySelector("ul");
-for (let ingredient of ingredients) {
+// for (let ingredient of ingredients) {
+//const element = document.createElement("li");
+// element.textContent = `${ingredient}`;
+// element.classList = "item";
+// list.append(element);
+// }
+const elements = ingredients.map(ingredient => {
   const element = document.createElement("li");
   element.textContent = `${ingredient}`;
   element.classList = "item";
-  list.append(element);
-}
+  return element;
+});
+list.append(...elements);
 console.log(list);
